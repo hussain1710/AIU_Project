@@ -1,0 +1,15 @@
+{
+  "name": "aiu-faculty-directory",
+  "private": true,
+  "version": "1.0.0",
+  "description": "AIU faculty directory test page (vanilla TypeScript, no framework)",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit && esbuild src/main.ts --bundle --format=iife --target=es2019 --outfile=assets/js/faculty.js && esbuild src/profile.ts --bundle --format=iife --target=es2019 --outfile=assets/js/profile.js && node scripts/inline.js",
+    "watch": "esbuild src/main.ts src/profile.ts --bundle --format=iife --target=es2019 --outdir=assets/js --entry-names=[name] --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "typescript": "^5.6.0"
+  }
+}
